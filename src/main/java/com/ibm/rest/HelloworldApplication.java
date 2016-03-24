@@ -8,8 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiOperation;
@@ -67,6 +69,15 @@ public class HelloworldApplication {
 			@ApiResponse(code = 500, message = "Failure") })
 	public Result add(@PathVariable("left") int left, @PathVariable("right") int right) {
 		return new Result("" + (left + right));
+	}
+	
+	@RequestMapping(value = "/operate/addJSON", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ApiOperation(value = "addJSON", nickname = "addJSON")
+	//@ApiParam(value = "Numbers to be added", required = true)
+	//@ApiResponses(value = { @ApiResponse(code = 200, message = "Success", response = Result.class)})
+	public @ResponseBody Result add(@RequestBody NumbersInput input) {
+		System.out.println(input);
+		return new Result("" + (input.getLeft() + input.getRight()));
 	}
 
 	public static void main(String[] args) {
