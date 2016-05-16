@@ -71,6 +71,17 @@ public class HelloworldApplication {
 		return new Result("" + (left + right));
 	}
 	
+	@RequestMapping(value = "/operate/add/{left}/{right}", method = RequestMethod.DELETE, produces = "application/json")
+	@ApiOperation(value = "addNumbers", nickname = "addNumbers")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success", response = Result.class),
+			@ApiResponse(code = 401, message = "Unauthorized"), 
+			@ApiResponse(code = 403, message = "Forbidden"),
+			@ApiResponse(code = 404, message = "Not Found"), 
+			@ApiResponse(code = 500, message = "Failure") })
+	public Result add(@PathVariable("left") int left, @PathVariable("right") int right) {
+		return new Result("" + (left + right));
+	}
+	
 	@RequestMapping(value = "/operate/addJSON", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "addJSON", nickname = "addJSON")
 	//@ApiParam(value = "Numbers to be added", required = true)
