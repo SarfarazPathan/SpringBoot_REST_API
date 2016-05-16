@@ -78,7 +78,7 @@ public class HelloworldApplication {
 			@ApiResponse(code = 403, message = "Forbidden"),
 			@ApiResponse(code = 404, message = "Not Found"), 
 			@ApiResponse(code = 500, message = "Failure") })
-	public Result add(@PathVariable("left") int left, @PathVariable("right") int right) {
+	public Result add1(@PathVariable("left") int left, @PathVariable("right") int right) {
 		return new Result("" + (left + right));
 	}
 	
