@@ -10,6 +10,7 @@ Right click on HelloworldApplication.java in eclipse - Run as Java Application
 - `http://localhost:12001/operate/add/51/56` : Generate JSON object result: {"imeplementation": "Java_SpringBoot", "result": "107"}
 
 ## Running on IBM Bluemix
+Endpoint: https://api.ng.bluemix.net
 `cf push api-springboot -p target/helloworld2-0.0.1-SNAPSHOT.war`
 
 The REST API URL on Bleumix then becomes 
