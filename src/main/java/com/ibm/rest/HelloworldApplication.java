@@ -2,6 +2,8 @@ package com.ibm.rest;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -28,6 +30,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @RestController
 @EnableSwagger2
 public class HelloworldApplication {
+	
+	static final Logger logger = LogManager.getLogger();
 
 	@Bean
     public Docket newsApi() {
@@ -68,6 +72,7 @@ public class HelloworldApplication {
 			@ApiResponse(code = 404, message = "Not Found"), 
 			@ApiResponse(code = 500, message = "Failure") })
 	public Result add(@PathVariable("left") int left, @PathVariable("right") int right) {
+		logger.info("Executing GET /operate/add/left/right API for {} and {}", left, right);
 		return new Result("" + (left + right));
 	}
 	
@@ -79,6 +84,7 @@ public class HelloworldApplication {
 			@ApiResponse(code = 404, message = "Not Found"), 
 			@ApiResponse(code = 500, message = "Failure") })
 	public Result add1(@PathVariable("left") int left, @PathVariable("right") int right) {
+		logger.info("Executing DELETE /operate/add/left/right API for {} and {}", left, right);
 		return new Result("" + (left + right));
 	}
 	
