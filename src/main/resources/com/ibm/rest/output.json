@@ -4,15 +4,15 @@
 
    "ANZAcctId":    {
 
-      "AcctId": "5434xxxxxxxxxx ",
+      "AcctId": "5430480002988320",
 
-      "AcctNo": "5434xxxxxxxxxx ",
+      "AcctNo": "5430480002988320",
 
       "AcctType": "PCP"
 
    },
 
-   "CustId": {"CustPermId": "2398xxxxx "},
+   "CustId": {"CustPermId": "236585693"},
 
    "SelRangeDt":    {
 
@@ -38,15 +38,15 @@
 
          "Desc1": "LATE PAYMENT FEE",
 
-         "Desc2": "CARD USED : 5434xxxxxxxxxx",
+         "Desc2": "CARD USED : 5430480002988320",
 
          "Amt": "47.08",
 
          "RunningBal": "8171.39",
 
-         "RefNum": "1000003457xxxxxxx95480",
+         "RefNum": "100000345765859495480",
 
-         "CardUsed": "5434xxxxxxxxxx",
+         "CardUsed": "5430480002988320",
 
          "CardSequence": "0",
 
@@ -70,15 +70,15 @@
 
          "Desc1": "INTEREST CHARGED ON PURCHASES",
 
-         "Desc2": "CARD USED : 5434xxxxxxxxxx",
+         "Desc2": "CARD USED : 5430480002988320",
 
          "Amt": "83.38",
 
          "RunningBal": "421.35",
 
-         "RefNum": "19999999xxxxxxxx9995450",
+         "RefNum": "199999995769449995450",
 
-         "CardUsed": "5434xxxxxxxxxx ",
+         "CardUsed": "5430480002988320",
 
          "CardSequence": "0",
 
@@ -102,15 +102,15 @@
 
          "Desc1": "LATE PAYMENT FEE",
 
-         "Desc2": "CARD USED : 5434xxxxxxxxxx",
+         "Desc2": "CARD USED : 5430480002988320",
 
          "Amt": "29.5",
 
          "RunningBal": "420.08",
 
-         "RefNum": "1000003345xxxxxxx5440",
+         "RefNum": "100000334575930555440",
 
-         "CardUsed": "5434xxxxxxxxxx",
+         "CardUsed": "5430480002988320",
 
          "CardSequence": "0",
 
