@@ -1,0 +1,127 @@
+{"AcctTrnInqRs": {
+
+   "RqUID": "e6253a70-e57f-085e-2153-c109037f7fdd",
+
+   "ANZAcctId":    {
+
+      "AcctId": "5434xxxxxxxxxx ",
+
+      "AcctNo": "5434xxxxxxxxxx ",
+
+      "AcctType": "PCP"
+
+   },
+
+   "CustId": {"CustPermId": "2398xxxxx "},
+
+   "SelRangeDt":    {
+
+      "StartDt": "2016-02-20",
+
+      "EndDt": "2016-02-22"
+
+   },
+
+   "RecCtrlOut": {"SentRec": "3"},
+
+   "BankAcctTrnRec":    [
+
+            {
+
+         "PostedDt": "2016-02-22",
+
+         "TrnDt": "2014-02-21",
+
+         "TrnType": "D",
+
+         "TrnCode": "505",
+
+         "Desc1": "LATE PAYMENT FEE",
+
+         "Desc2": "CARD USED : 5434xxxxxxxxxx",
+
+         "Amt": "47.08",
+
+         "RunningBal": "8171.39",
+
+         "RefNum": "1000003457xxxxxxx95480",
+
+         "CardUsed": "5434xxxxxxxxxx",
+
+         "CardSequence": "0",
+
+         "CategoryCode": "0",
+
+         "Plan": "10002",
+
+         "PlanSeq": "2"
+
+      },
+
+            {
+
+         "PostedDt": "2016-02-21",
+
+         "TrnDt": "2014-02-20",
+
+         "TrnType": "D",
+
+         "TrnCode": "519",
+
+         "Desc1": "INTEREST CHARGED ON PURCHASES",
+
+         "Desc2": "CARD USED : 5434xxxxxxxxxx",
+
+         "Amt": "83.38",
+
+         "RunningBal": "421.35",
+
+         "RefNum": "19999999xxxxxxxx9995450",
+
+         "CardUsed": "5434xxxxxxxxxx ",
+
+         "CardSequence": "0",
+
+         "CategoryCode": "0",
+
+         "Plan": "10002",
+
+         "PlanSeq": "1"
+
+      },
+
+            {
+
+         "PostedDt": "2016-02-20",
+
+         "TrnDt": "2014-02-19",
+
+         "TrnType": "D",
+
+         "TrnCode": "505",
+
+         "Desc1": "LATE PAYMENT FEE",
+
+         "Desc2": "CARD USED : 5434xxxxxxxxxx",
+
+         "Amt": "29.5",
+
+         "RunningBal": "420.08",
+
+         "RefNum": "1000003345xxxxxxx5440",
+
+         "CardUsed": "5434xxxxxxxxxx",
+
+         "CardSequence": "0",
+
+         "CategoryCode": "0",
+
+         "Plan": "10002",
+
+         "PlanSeq": "2"
+
+      }
+
+   ]
+
+}}

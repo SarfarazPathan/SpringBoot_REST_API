@@ -1,0 +1,53 @@
+{
+
+                "AcctTrnInqRq": {
+
+                                "ANZTraceInfo": {
+
+                                                "EffDt": "2016-04-06",
+
+                                                "InitCompany": "00010",
+
+                                                "OperatorId": "finacleu",
+
+                                                "BranchId": "003026",
+
+                                                "TerminalId": "",
+
+                                                "OrigApp": "PCB"
+
+                                },
+
+                                "RqUID": "e6253a70-e57f-085e-2153-c109037f7fdd",
+
+                                "ANZAcctId": {
+
+                                                "AcctId": "5434xxxxxxxxxx",
+
+                                                "AcctNo": "5434xxxxxxxxxx ",
+
+                                                "AcctType": "PCP"
+
+                                },
+
+                                "CustId": {
+
+                                                "CustPermId": "2398xxxxx"
+
+                                },
+
+                                "SelRangeDt": {
+
+                                                "StartDt": "2016-02-20",
+
+                                                "EndDt": "2016-02-22"
+
+                                },
+
+                                "IncDetail": "1",
+
+                                "RecCtrlIn": "2000"
+
+                }
+
+}

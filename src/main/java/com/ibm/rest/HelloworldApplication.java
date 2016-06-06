@@ -2,6 +2,9 @@ package com.ibm.rest;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
+import java.io.InputStream;
+import java.text.DateFormat;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +18,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.ibm.rest.transaction.input.TransactionInput;
+import com.ibm.rest.transaction.output.AcctTrnInqRs;
+import com.ibm.rest.transaction.output.TransactionOutput;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -96,8 +107,28 @@ public class HelloworldApplication {
 		System.out.println(input);
 		return new Result("" + (input.getLeft() + input.getRight()));
 	}
+	
+	@RequestMapping(value = "/transactions", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ApiOperation(value = "addJSON", nickname = "addJSON")
+	public @ResponseBody TransactionOutput add(@RequestBody TransactionInput input) throws Exception {
+		logger.info("Executing /transactions API for {}", input);
+		TransactionOutput output = null;
+		InputStream io = this.getClass().getResourceAsStream("output.json");
+		if(input.getAcctTrnInqRq().getCustId() == null || input.getAcctTrnInqRq().getCustId().getCustPermId() == null) {
+			throw new Exception("Cusotmer ID not valid");
+		}
+		String json =  org.apache.commons.io.IOUtils.toString(io);
+		 Gson gson = new GsonBuilder()
+			     .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+			     .create();
+		output = gson.fromJson(json, TransactionOutput.class);
+		logger.info("Output is {}", output.getAcctTrnInqRs());
+		return output;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(HelloworldApplication.class, args);
 	}
+	
+	
 }
