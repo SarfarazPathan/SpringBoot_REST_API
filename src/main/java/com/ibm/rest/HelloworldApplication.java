@@ -110,19 +110,21 @@ public class HelloworldApplication {
 	
 	@RequestMapping(value = "/transactions", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "addJSON", nickname = "addJSON")
-	public @ResponseBody TransactionOutput add(@RequestBody TransactionInput input) throws Exception {
+	public @ResponseBody Object add(@RequestBody TransactionInput input) throws Exception {
 		logger.info("Executing /transactions API for {}", input);
 		TransactionOutput output = null;
 		InputStream io = this.getClass().getResourceAsStream("output.json");
-		if(input.getAcctTrnInqRq().getCustId() == null || input.getAcctTrnInqRq().getCustId().getCustPermId() == null) {
-			throw new Exception("Cusotmer ID not valid");
+		if(input.getAcctTrnInqRq().getANZAcctId().getAcctId() == null || input.getAcctTrnInqRq().getANZAcctId().getAcctId().equalsIgnoreCase("5000")) {
+			throw new Exception("Invalid Account ID");
+		} else if(input.getAcctTrnInqRq().getANZAcctId().getAcctId().equalsIgnoreCase("6000")) {
+			return new BusinessError("80064", "Mobile Number in use");
 		}
 		String json =  org.apache.commons.io.IOUtils.toString(io);
 		 Gson gson = new GsonBuilder()
 			     .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
 			     .create();
 		output = gson.fromJson(json, TransactionOutput.class);
-		logger.info("Output is {}", output.getAcctTrnInqRs());
+		logger.info("Output is {}", output);
 		return output;
 	}
 
