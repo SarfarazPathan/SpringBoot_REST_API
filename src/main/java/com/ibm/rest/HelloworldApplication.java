@@ -24,6 +24,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.ibm.rest.account.AccountDetailsOutput;
+import com.ibm.rest.account.AccountInput;
 import com.ibm.rest.transaction.input.TransactionInput;
 import com.ibm.rest.transaction.output.AcctTrnInqRs;
 import com.ibm.rest.transaction.output.TransactionOutput;
@@ -131,12 +132,12 @@ public class HelloworldApplication {
 	
 	@RequestMapping(value = "/acctbalance", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "addJSON", nickname = "addJSON")
-	public @ResponseBody Object getBalanace(@RequestBody String input) throws Exception {
+	public @ResponseBody Object getBalanace(@RequestBody AccountInput input) throws Exception {
 		logger.info("Executing /acctbalance API for {}", input);
 		AccountDetailsOutput output = null;
-		if(input == null || input.equalsIgnoreCase("5000")) {
-			throw new Exception("Invalid Account ID");
-		} else if(input.equalsIgnoreCase("6000")) {
+		if(input == null || input.getCustId()==null || input.getCustId().equalsIgnoreCase("5000")) {
+			throw new Exception("Invalid Customer ID");
+		} else if(input.getCustId().equalsIgnoreCase("6000")) {
 			return new BusinessError("80064", "Mobile Number in use");
 		}
 		InputStream io = this.getClass().getResourceAsStream("accountbalance.json");

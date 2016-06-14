@@ -12,16 +12,17 @@ import java.util.List;
  */
 public class AccountDetailsOutput {
 
-	private List<AccountDetails> bankAcctRec = new ArrayList<AccountDetails>();
+	private List<Account> accounts = new ArrayList<Account>();
 	
 	private String custId;
 
-	public List<AccountDetails> getBankAcctRec() {
-		return bankAcctRec;
+
+	public List<Account> getAccounts() {
+		return accounts;
 	}
 
-	public void setBankAcctRec(List<AccountDetails> bankAcctRec) {
-		this.bankAcctRec = bankAcctRec;
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
 	}
 
 	public String getCustId() {

@@ -1,13 +1,19 @@
 {
 	"custId" : "GTYF658309",
-	"bankAcctRec" : [ {
-		"accountNo" : "56784567465798545",
-		"name" : "George Smith",
-		"balance" : "4430.67"
+	"accounts" : [ {
+		"bankAccountId" : "56784567465798545",
+		"accountHolderName" : "George Smith",
+		"availableBalance" : "4430.67",
+		"currentBalance" : "4430.67",
+		"availableLimit" : "8967.54",
+		"branchCode" : "6583"
 	},
-	{
-		"accountNo" : "768445674657980056",
-		"name" : "G Smith",
-		"balance" : "30785.67"
+	{		
+		"bankAccountId" : "6573456746577800",
+		"accountHolderName" : "G Smith & Co",
+		"availableBalance" : "6587.78",
+		"currentBalance" : "6524.57",
+		"availableLimit" : "20000",
+		"branchCode" : "6582"
 	}]
 }
